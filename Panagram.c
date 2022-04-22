@@ -5,7 +5,7 @@ void main(){
     char str[50];
     scanf("%[^\n]s", str);
     for(len=0;str[len]!='\0';len++){
-        str[i] = tolower(str[i]);
+        str[len] = tolower(str[len]);
     }
     int temp[256] = {0};
     for(i=0;i<len;i++)
