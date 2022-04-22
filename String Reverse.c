@@ -9,3 +9,5 @@ void main()
         printf("%c", str[i]);
     }
 }
+I/P: String Reverse
+O/P: esreveR gnirtS
