@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+
+void main(){
+    char str[100];
+    scanf("%s",str);
+    int len = strlen(str);
+    int arr[100];
+    int num=0,ind=0;
+    for(int i=0;i<len;i++){
+        if(str[i]==','){
+            arr[ind++] = num;
+            num = 0;
+        }
+        else{
+            num = (num*10)+(str[i]-'0');
+        }
+    }
+    arr[ind++] = num;
+    int l=ind;
+    int n=0;
+    while((n*(n+1))/2 != l){
+        n++;
+    }
+    int k;
+    int y=n;
+    int x=y-1;
+    for(int i=0;i<n;i++){
+        for(int j=0,k=i;j<=i;j++,k+=x,x--){
+            printf("%d ",arr[k]);
+        }
+        x=y-1;
+        k++;
+        printf("\n");
+    }
+}
+
+/*i/p:11,12,13,14,15,16
+o/p:
+11
+12 14
+13 15 16
