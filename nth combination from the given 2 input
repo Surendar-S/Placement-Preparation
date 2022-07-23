@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+void main(){
+    int a,b,n,rem;
+    scanf("%d %d %d",&a,&b,&n);
+    int count = 0;
+    int i;
+    int max = a>b?a:b;
+    int x=0,y=0;
+    int curr_num;
+    for(i=max+1;;i++){
+        curr_num = i;
+        while(1){
+            rem = curr_num%10;
+            curr_num = curr_num/10;
+            if(rem!=a && rem!=b){
+                break;
+            }
+            if(rem==a){
+                x=1;
+            }
+            if(rem==b){
+                y=1;
+            }
+            if(curr_num==0 && x==1 && y==1){
+                count++;
+                break;
+            }
+            else if(curr_num==0){
+                break;
+            }
+        }
+        x=0;
+        y=0;
+        if(count==n){
+            break;
+        }
+    }
+    printf("%d",i);
+}
